@@ -11,7 +11,11 @@ import Footer from "./components/common/footer/Footer"
 import Home from "./components/home/Home"
 import SignUp from "./components/signup/signup"
 import Login from "./components/login/Login"
-import LeadManagement from "./components/admin/leads/leads"
+import ViewLead from "./components/admin/leads/viewLead/ViewLeads"
+import AddLead from "./components/admin/leads/addLead/AddLead"
+import LeadUpload from "./components/admin/leads/LeadUpload"
+import EditLead from "./components/admin/leads/editLead/EditLead"
+
 
 
 function App() {
@@ -20,7 +24,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path='/' element={<Login/>} />
+          <Route exact path='/' element={<Home/>} />
           <Route exact path='/home' element={<Home/>} />
           <Route exact path='/about' element={<About/>} />
           <Route exact path='/courses' element={<CourseHome/>} />
@@ -30,7 +34,11 @@ function App() {
           <Route exact path='/contact' element={<Contact/>} />
           <Route exact path='/login' element={<Login/>} />
           <Route exact path='/signup' element={<SignUp/>} />
-          <Route exact path='/admin/leads' element={<LeadManagement/>} />
+
+          <Route exact path='/admin/leads' element={<ViewLead/>} />
+          <Route exact path='/admin/leads/add' element={<AddLead/>} />
+          <Route exact path='/admin/leads/upload' element={<LeadUpload/>} />
+          <Route exact path='/admin/leads/edit/:id' element={<EditLead/>} />
         </Routes>
         <Footer />
       </Router>
